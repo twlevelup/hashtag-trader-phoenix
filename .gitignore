@@ -1,8 +1,6 @@
 .DS_Store
 .bundle
 
-Gemfile.lock
-
 # Ignore vendor gems.
 /vendor
 
