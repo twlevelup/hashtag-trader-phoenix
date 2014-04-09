@@ -1,1 +1,31 @@
-%div.title Registration.
+%div.title Registration
+%form{ :action=>"", :method => "post"}
+    Name: 
+    %input{:type=>"text",:name =>"name"}
+    Surname:
+    %input{:type=>"text",:name =>"surname"}
+    Email:
+    %input{:type=>"text",:name =>"email"}
+  
+    %br What kind of cats do you like?
+
+    %div
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat1
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat2   
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat3
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat4       
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat5        
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat6        
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat7      
+        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        Cat8       
+
+  
+    %input{:type=>"submit", :value =>"Send", :class =>"btn-primary"}
