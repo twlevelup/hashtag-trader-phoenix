@@ -1,24 +1,29 @@
+require_relative 'model/user_details.rb'
+
+# DM - Designed as an adapter between business objects and persistant storage classes
+#    - Currently uses tmp data. 
+# 	 - May need to be modified into a facade for more targetted classes as it grows.
 class Data_Manager
 
-	def authorised?(user_name, password)
-		
-		tmp_valid_pass = "Valid Pass"
-		isValid = 
-			(userExists(user_name) &&
-			password == tmp_valid_pass)
+	def authorised?(user_name, password)		
+		tmp_valid_pass = "Valid Pass"		 
+		(userExists?(user_name) && password == tmp_valid_pass)
 	end
 
-	def register(values)
-		raise ArgumentError, "Missing First Name" if !values.key?(:first_name)
-		raise ArgumentError, "Missing Last Name" if !values.key?(:last_name)
-		raise ArgumentError, "Missing Favourite Cat" if !values.key?(:favourite_cat)
-		raise ArgumentError, "Missing Email" if !values.key?(:email)
-		!userExists(values[:email])
+	def register(user_details)
+		raise ArgumentError, "User details not provided:" if user_details.class != User_Details
+		!userExists?(user_details.getUserName)
+	end
+
+	def userDetails(user_name)		
+		userExists?(user_name) ?
+			User_Details.new("Alice","Carroll","looking.glass@the","Cheshire","AliceCarroll") 
+			: nil
 	end
 
 	private
-	def userExists(user_name)		
-		user_name == "Existing User"
+	def userExists?(user_name)		
+		user_name == "AliceCarroll"
 	end
 
 end
