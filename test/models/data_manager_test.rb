@@ -1,8 +1,8 @@
 require 'minitest/spec'
 require 'minitest/autorun'
 require_relative '../minitest_helper'
-require_relative '../../lib/app_code/data_manager.rb'
-require_relative '../../lib/app_code/model/user_details.rb'
+require_relative '../../lib/app_code/data_manager'
+require_relative '../../lib/app_code/model/user_details'
 
 describe Data_Manager do
 

@@ -1,4 +1,4 @@
-require_relative 'model/user_details.rb'
+require_relative './model/user_details'
 
 # DM - Designed as an adapter between business objects and persistant storage classes
 #    - Currently uses tmp data. 
