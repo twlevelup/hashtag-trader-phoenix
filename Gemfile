@@ -10,7 +10,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-minitest'
 end
-
+gem 'pg' #DM Adding for testing postgres
 gem 'sinatra'
 gem 'sinatra-twitter-bootstrap', :require => 'sinatra/twitter-bootstrap'
 gem 'haml'
