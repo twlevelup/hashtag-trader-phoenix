@@ -8,4 +8,4 @@ $ initdb /usr/local/var/postgres
 $ postgres -D /usr/local/var/postgres
 
 # create your database
-$ createdb mydb
+$ createdb phoenix
