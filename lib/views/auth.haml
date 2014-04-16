@@ -7,7 +7,7 @@
 .container
 	.form-horizontal
 		.control-group
-			%form{:name => "login", :id => "login", :action => "/Register", :method => "post"}	
+			%form{:name => "login", :id => "login", :action => "Register", :method => "post"}	
 				.control-label
 					Username: 
 				.controls
@@ -20,7 +20,7 @@
 				%br
 				.controls
 					%input{:type => "submit", :value => "Login", :class => "button"}
-					%a{ :href => '../Register' } Register
+					%a{ :href => '/auth/Register' } Register
 
 
 
