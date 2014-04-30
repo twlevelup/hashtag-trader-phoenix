@@ -6,26 +6,42 @@
     %input{:type=>"text",:name =>"surname"}
     Email:
     %input{:type=>"text",:name =>"email"}
-  
+
+    %br User status
+    Casual
+    %input{:type=> 'radio', :name => 'user_status', :value=> 'casual'}
+    Power
+    %input{:type=> 'radio', :name => 'user_status', :value=> 'power'}
+
     %br What kind of cats do you like?
+    Yes
+    %input{:type=> 'radio', :name => 'like_cats', :value=> 'yes'}
+    No
+    %input{:type=> 'radio', :name => 'like_cats', :value=> 'no'}
 
     %div
         %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
         Cat1
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        %input{:type=>"checkbox",:name =>"cat", :value =>"2"} 
         Cat2   
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        %input{:type=>"checkbox",:name =>"cat", :value =>"3"} 
         Cat3
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        %input{:type=>"checkbox",:name =>"cat", :value =>"4"} 
         Cat4       
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        %input{:type=>"checkbox",:name =>"cat", :value =>"5"} 
         Cat5        
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        %input{:type=>"checkbox",:name =>"cat", :value =>"6"} 
         Cat6        
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        %input{:type=>"checkbox",:name =>"cat", :value =>"7"} 
         Cat7      
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+        %input{:type=>"checkbox",:name =>"cat", :value =>"8"} 
         Cat8       
 
-  
+    %a{:href => "/terms", :target=>"_blank"} Terms
+
+    %input{:type=>"checkbox",:name =>"cat", :value =>"8"} 
+    I accept 
+    %br
     %input{:type=>"submit", :value =>"Send", :class =>"btn-primary"}
+
+
