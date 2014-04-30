@@ -4,23 +4,5 @@
 	- settings.configuration.omniauth_providers.each do |provider|
 		%a{ href: "/auth/#{provider.id}" }= provider.id
 
-.container
-	.form-horizontal
-		.control-group
-			%form{:name => "login", :id => "login", :action => "Register", :method => "post"}	
-				.control-label
-					Username: 
-				.controls
-					%input{:type => "text", :name => "name", :placeholder => "Username"} 
-				%br
-				.control-label
-					Password:
-				.controls
-					%input{:type => "password", :name => "password", :placeholder => "Password"}	
-				%br
-				.controls
-					%input{:type => "submit", :value => "Login", :class => "button"}
-					%a{ :href => '/auth/Register' } Register
-
 
 

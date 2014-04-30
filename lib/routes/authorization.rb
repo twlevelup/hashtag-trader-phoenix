@@ -17,6 +17,12 @@ module HashTagTrader
           session[:uid] = env['omniauth.auth']['uid']
           session[:name] = env['omniauth.auth'][:info][:name]
           redirect to('/')
+      
+          if session[:name] == "wsutina" 
+          redirect to('/')
+          else
+          redirect to('/auth/Register')
+          end
         end
       end
     end
