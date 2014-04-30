@@ -22,7 +22,7 @@ module HashTagTrader
           redirect to('/')
           else
           redirect to('/auth/Register')
-          end
+          end 
         end
       end
     end
