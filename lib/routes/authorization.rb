@@ -16,8 +16,8 @@ module HashTagTrader
         app.get '/auth/github/callback' do
           session[:uid] = env['omniauth.auth']['uid']
           session[:name] = env['omniauth.auth'][:info][:name]
-          redirect to('/')
-      
+          
+          # wsutina is my github account, you can change it to yours!
           if session[:name] == "wsutina" 
           redirect to('/')
           else
