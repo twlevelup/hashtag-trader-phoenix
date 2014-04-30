@@ -3,7 +3,7 @@ module HashTagTrader
     module Registration
       def self.registered(app)
         app.get '/auth/Register' do
-         haml :registration
+         haml :registration, :layout => :layout2
         end
         app.get '/Terms' do
     	   haml :tandc

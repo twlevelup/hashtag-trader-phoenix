@@ -1,47 +1,69 @@
-%div.title Registration
-%form{ :action=>"", :method => "post"}
-    Name: 
-    %input{:type=>"text",:name =>"name"}
-    Surname:
-    %input{:type=>"text",:name =>"surname"}
-    Email:
-    %input{:type=>"text",:name =>"email"}
+%form.form-horizontal{ :action=>"", :method => "post", :role=> "form"}
+    %legend
+        Registration
+    .form-group
+        %strong
+            %label{:for => "name"}Name:
+        %input.input-xlarge{:type=>"text",:name =>"name",:placeholder => 'Your name'}
+    
+    .form-group
+        %label{:for => "Surname"} Surname:
+        %input.input-xlarge{:type=>"text",:name =>"surname",:placeholder => 'Enter surname'}
+    .form-group
+        %label{:for => "Email"} Email:
+        %input.input-xlarge{:type=>"email",:name =>"email",:placeholder => 'e-mail'}
+    .form-group
+        %label{:for => "userStatus"} User status:
+        .radio
+            %label
+                %input{:id=>'cb1', :name => "userStatus", :type => "radio", :value => "casual"} Casual
+        .radio    
+            %label
+                %input{:id=>'cb2',:name => "userStatus", :type => "radio", :value => "power"} Power
 
-    %br User status
-    Casual
-    %input{:type=> 'radio', :name => 'user_status', :value=> 'casual'}
-    Power
-    %input{:type=> 'radio', :name => 'user_status', :value=> 'power'}
+    .form-group
+        %label{:for => "cats"} Do you like cats?
+        .radio
+            %label
+                %input{:name => "catsRadio", :type => "radio", :value => "yes"} Yes
+        .radio
+            %label
+                %input{:name => "catsRadio", :type => "radio", :value => "no"} No
 
-    %br What kind of cats do you like?
-    Yes
-    %input{:type=> 'radio', :name => 'like_cats', :value=> 'yes'}
-    No
-    %input{:type=> 'radio', :name => 'like_cats', :value=> 'no'}
-
-    %div
-        %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
-        Cat1
-        %input{:type=>"checkbox",:name =>"cat", :value =>"2"} 
-        Cat2   
-        %input{:type=>"checkbox",:name =>"cat", :value =>"3"} 
-        Cat3
-        %input{:type=>"checkbox",:name =>"cat", :value =>"4"} 
-        Cat4       
-        %input{:type=>"checkbox",:name =>"cat", :value =>"5"} 
-        Cat5        
-        %input{:type=>"checkbox",:name =>"cat", :value =>"6"} 
-        Cat6        
-        %input{:type=>"checkbox",:name =>"cat", :value =>"7"} 
-        Cat7      
-        %input{:type=>"checkbox",:name =>"cat", :value =>"8"} 
-        Cat8       
-
-    %a{:href => "/Terms", :target=>"_blank"} Terms
-
-    %input{:type=>"checkbox",:name =>"cat", :value =>"8"} 
-    I accept 
+    .form-group
+        %label{:for => "typeofcats"} Which cats do you like?
+        %label
+            %input{:type=>"checkbox",:name =>"cat", :value =>"1"} 
+                Cat1
+        %label
+            %input{:type=>"checkbox",:name =>"cat", :value =>"2"} 
+                Cat2
+        %label 
+            %input{:type=>"checkbox",:name =>"cat", :value =>"3"} 
+                Cat3
+        %label
+            %input{:type=>"checkbox",:name =>"cat", :value =>"4"} 
+                Cat4 
+        %label    
+            %input{:type=>"checkbox",:name =>"cat", :value =>"5"} 
+            Cat5
+        %label        
+            %input{:type=>"checkbox",:name =>"cat", :value =>"6"} 
+            Cat6
+        %label       
+            %input{:type=>"checkbox",:name =>"cat", :value =>"7"} 
+            Cat7
+        %label     
+            %input{:type=>"checkbox",:name =>"cat", :value =>"8"} 
+            Cat8       
     %br
-    %input{:type=>"submit", :value =>"Send", :class =>"btn-primary"}
+    %label
+        %input{:type=>"checkbox",:name =>"cat", :value =>"8"} 
+            I agree with the
+            %a{:href => "/Terms", :target=>"_blank"} Terms and conditions
 
+   
+    %br
+
+    %button.btn.btn-default{:type => "submit"} Submit
 

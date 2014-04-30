@@ -12,6 +12,8 @@ require_relative 'routes/registration'
 
 class HashTagTraderApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
+  set :static, true
+  set :public, 'public'
 
   use Rack::SslEnforcer, :only_hosts => /.*\.herokuapp\.com$/
   set :session_secret, '97b1bbfffbd8e70979f375bde519bdc313b0a549b323cfa2ae74c615f9e42e04'

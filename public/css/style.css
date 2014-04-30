@@ -1,0 +1,9 @@
+html, body {
+        background-color: #eee;
+      }
+
+.centred {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
