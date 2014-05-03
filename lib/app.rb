@@ -10,6 +10,8 @@ require_relative 'routes/index'
 require_relative 'routes/authorization'
 require_relative 'routes/registration'
 
+require_relative 'app_code/data_manager'
+
 class HashTagTraderApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :static, true
@@ -48,6 +50,10 @@ class HashTagTraderApp < Sinatra::Base
   register HashTagTrader::Routes::Index
   register HashTagTrader::Routes::Authorization
   register HashTagTrader::Routes::Registration
+
+  configure do
+    set :data_mgr, Data_Manager.new
+  end
 
 
 end

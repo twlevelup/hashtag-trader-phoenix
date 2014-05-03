@@ -5,25 +5,26 @@ require_relative 'model/user_details'
 # 	 - May need to be modified into a facade for more targetted classes as it grows.
 class Data_Manager
 
-	def authorised?(user_name, password)		
-		tmp_valid_pass = "Valid Pass"		 
-		(userExists?(user_name) && password == tmp_valid_pass)
-	end
+	def initialize()
+		@db		#this is where the connection to the db is to be held
+
+	end	
 
 	def register(user_details)
 		raise ArgumentError, "User details not provided:" if user_details.class != User_Details
-		!userExists?(user_details.getUserName)
+		!userExists?(user_details.user_name)
 	end
 
 	def userDetails(user_name)		
 		userExists?(user_name) ?
-			User_Details.new("Alice","Carroll","looking.glass@the","Cheshire","AliceCarroll") 
+			User_Details.new("Alice","Carroll","looking.glass@the","Cheshire","AliceCarroll", "power") 
 			: nil
 	end
 
-	private
 	def userExists?(user_name)		
-		user_name == "AliceCarroll"
+        # list of valid user names (until they go in the db)
+        validNames = ["wsutina","AliceCarroll"]
+        validNames.include? user_name
 	end
 
 end

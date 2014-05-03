@@ -10,6 +10,7 @@ module HashTagTrader
         app.post '/auth/developer/callback' do
           session[:uid] = env['omniauth.auth']['uid']
           session[:name] = env['omniauth.auth'][:info][:name]
+
           redirect to('/')
         end
 
@@ -17,13 +18,21 @@ module HashTagTrader
           session[:uid] = env['omniauth.auth']['uid']
           session[:name] = env['omniauth.auth'][:info][:name]
           
-          # wsutina is my github account, you can change it to yours!
-          if session[:name] == "wsutina" 
-          redirect to('/')
-          else
-          redirect to('/auth/Register')
-          end 
+          data_mgr = settings.data_mgr
+          redirect to('/') if data_mgr.userExists?(session[:name])
         end
+
+# this is to allow spoofing a user's access until we have the database functional
+        app.get '/auth/spoof' do
+          session[:name] = params["name"]          
+          data_mgr = settings.data_mgr
+          redirect to('/') if data_mgr.userExists?(session[:name])
+
+          redirect to('/auth/Register')
+        end
+
+
+
       end
     end
   end
