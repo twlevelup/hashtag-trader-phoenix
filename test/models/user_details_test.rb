@@ -1,7 +1,7 @@
 require 'minitest/spec'
 require 'minitest/autorun'
 require_relative '../minitest_helper'
-require_relative '../../lib/app_code/model/user_details'
+require_relative '../../lib/model/user_details'
 
 describe User_Details do
   

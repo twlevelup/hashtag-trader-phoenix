@@ -5,11 +5,6 @@ require_relative 'model/user_details'
 # 	 - May need to be modified into a facade for more targetted classes as it grows.
 class Data_Manager
 
-	def initialize()
-		@db		#this is where the connection to the db is to be held
-
-	end	
-
 	def register(user_details)
 		raise ArgumentError, "User details not provided:" if user_details.class != User_Details
 		!userExists?(user_details.user_name)
