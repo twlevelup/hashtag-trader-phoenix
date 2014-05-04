@@ -5,13 +5,14 @@ require 'sinatra/twitter-bootstrap'
 require 'rack/ssl-enforcer'
 require 'haml'
 require 'sinatra/activerecord'
+require './config/environments'
 
 require_relative 'configuration'
 require_relative 'routes/index'
 require_relative 'routes/authorization'
 require_relative 'routes/registration'
 
-require_relative 'data_manager'
+#require_relative 'data_manager'
 
 class HashTagTraderApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
@@ -41,7 +42,6 @@ class HashTagTraderApp < Sinatra::Base
 
   before do
     pass if request.path_info =~ /^\/(js|css|auth)\//
-
     redirect to("/auth/") unless session[:uid]
   end
 
@@ -51,23 +51,6 @@ class HashTagTraderApp < Sinatra::Base
   register HashTagTrader::Routes::Index
   register HashTagTrader::Routes::Authorization
   register HashTagTrader::Routes::Registration
-
-  configure do
-    set :data_mgr, Data_Manager.new
-  end
-
-  configure :production, :development do 
-    db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/phoenixdev')
-
-    ActiveRecord::Base.establish_connection(
-    :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
-    :host     => db.host,
-    :username => db.user,
-    :password => db.password,
-    :database   => db.path[1..-1],
-    :encoding   => 'utf8'
-    )
-end
 
 end
 
