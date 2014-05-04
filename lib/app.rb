@@ -12,8 +12,6 @@ require_relative 'routes/index'
 require_relative 'routes/authorization'
 require_relative 'routes/registration'
 
-#require_relative 'data_manager'
-
 class HashTagTraderApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :static, true

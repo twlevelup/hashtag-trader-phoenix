@@ -1,4 +1,4 @@
-require './lib/Data_Manager'
+require './lib/data_manager'
 module HashTagTrader
   module Routes
     module Authorization
