@@ -5,6 +5,7 @@ require_relative '../../lib/model/user_details'
 require_relative '../../lib/data_manager'
 describe Data_Manager do
 
+=begin
   let(:data_mgr) {Data_Manager.new}
    describe "when checking if a user exists" do
 	it "returns a failure when an empt user name is passed" do
@@ -40,5 +41,5 @@ describe Data_Manager do
 	end
 
   end
-
+=end
 end
