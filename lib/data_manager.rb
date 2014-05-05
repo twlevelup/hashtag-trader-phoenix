@@ -7,12 +7,12 @@ class Data_Manager
 
 	def register(details)
 		 User_Details.create(
-             first_name: details["first_name"],
-             last_name: details["last_name"],
-             email: details["email"],
-             cat: details["cats"],
-             user_name: details["user_name"],
-             user_type: details["user_type"])
+             first_name: details[:first_name],
+             last_name: details[:last_name],
+             email: details[:email],
+             cat: details[:cats],
+             user_name: details[:user_name],
+             user_type: details[:user_type])
 	end
 
 	def userDetails(user_name)		
