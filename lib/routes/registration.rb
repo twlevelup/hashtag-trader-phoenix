@@ -19,12 +19,13 @@ module HashTagTrader
              redirect to('/auth/Register') 
           end
 
-          details["user_name"] = session[:name]
-          details["first_name"] = params["name"]
-          details["last_name"] = params["surname"]
-          details["email"] = params["email"]
-          details["cat"] = params["cat"]
-          details["user_type"] = params["userStatus"]
+          details = Hash.new
+          details[:user_name] = session[:name]
+          details[:first_name] = params["name"]
+          details[:last_name] = params["surname"]
+          details[:email] = params["email"]
+          details[:cat] = params["cat"]
+          details[:user_type] = params["userStatus"]
          
           data_mgr.register(details)
           redirect to('/')
