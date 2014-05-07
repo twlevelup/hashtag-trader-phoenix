@@ -1,3 +1,4 @@
+require './lib/data_manager'
 module HashTagTrader
   module Routes
     module Authorization
@@ -16,13 +17,12 @@ module HashTagTrader
         app.get '/auth/github/callback' do
           session[:uid] = env['omniauth.auth']['uid']
           session[:name] = env['omniauth.auth'][:info][:name]
-          
-          # wsutina is my github account, you can change it to yours!
-          if session[:name] == "wsutina" 
-          redirect to('/')
+          data_mgr = Data_Manager.new
+          if data_mgr.userExists?(session[:name])
+            redirect to '/' 
           else
-          redirect to('/auth/Register')
-          end 
+            redirect to '/auth/Register'
+          end
         end
       end
     end

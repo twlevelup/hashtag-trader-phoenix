@@ -1,3 +1,7 @@
+#DM So this is a general overview of what was required to set everything up for Heroku / ActiveRecord / Sinatra
+
+### Database - Local 
+
 # install the binary
 $ brew install postgresql
 
@@ -9,3 +13,29 @@ $ postgres -D /usr/local/var/postgres
 
 # create your database
 $ createdb phoenix
+
+### Database - Remote (NB. This should not need to be done again)
+When adding a database on Heroku it should set the 'DATABASE_URL' environment variable tothe db connection string. 
+For some reason it didn't for me. Regardless this can be done through the Heroku CLI. This has been done, so shouldn't need to happen again unless it breaks.
+
+# returns a list of the DATABASES
+$heroku config | grep HEROKU_POSTGRESQL
+# sets DATABASE_URL (replace DATABASE with one of the returned entries)
+$heroku config:set DATABASE_URL = DATABASE
+
+### Application setup - ActiveRecord
+We're using ActiveRecord to map objects to sql tables. The code should be already set up and all the relevant gems should be included in the gemfile now. So just the following:
+
+# Install the required gems
+$bundle install
+
+# Rake command to set up the tables in our databases.
+$rake db:migrate
+
+Nb. This same command had to be run on Heroku to set up the tables. This has been done, so shouldn't need to happen again unless it breaks.
+$heroku run rake db:migrate
+
+I'm not going to list every step involved in setting it up in the code, but the following link provides good detail:
+http://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/
+
+

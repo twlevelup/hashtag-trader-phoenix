@@ -4,6 +4,8 @@ require 'sinatra/base'
 require 'sinatra/twitter-bootstrap'
 require 'rack/ssl-enforcer'
 require 'haml'
+require 'sinatra/activerecord'
+require './config/environments'
 
 require_relative 'configuration'
 require_relative 'routes/index'
@@ -38,7 +40,6 @@ class HashTagTraderApp < Sinatra::Base
 
   before do
     pass if request.path_info =~ /^\/(js|css|auth)\//
-
     redirect to("/auth/") unless session[:uid]
   end
 
@@ -48,7 +49,6 @@ class HashTagTraderApp < Sinatra::Base
   register HashTagTrader::Routes::Index
   register HashTagTrader::Routes::Authorization
   register HashTagTrader::Routes::Registration
-
 
 end
 
