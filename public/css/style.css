@@ -1,3 +1,17 @@
 html, body {
         background-color: #eee;
       }
+
+.center {
+	float: none !important;
+	margin: 0 auto !important;
+
+}
+.centbutton{
+	padding-left: 200px;
+}
+fieldset {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	 border-radius: 8px;
+}
