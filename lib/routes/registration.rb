@@ -31,7 +31,7 @@ module HashTagTrader
           redirect to('/')
         end 
 
-        app.get '/Terms' do
+        app.get '/auth/Terms' do
     	   haml :tandc, :layout => :layout2
         end
 
