@@ -32,7 +32,7 @@ module HashTagTrader
         end 
 
         app.get '/Terms' do
-    	   haml :tandc
+    	   haml :tandc, :layout => :layout2
         end
 
       end
