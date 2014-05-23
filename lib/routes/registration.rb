@@ -30,11 +30,6 @@ module HashTagTrader
           data_mgr.register(details)
           redirect to('/')
         end 
-
-        app.get '/Terms' do
-    	   haml :tandc
-        end
-
       end
     end
   end
