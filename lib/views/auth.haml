@@ -1,8 +1,9 @@
-%h2 Please login
-
+%h2 Hashtag Trader
 %ul
 	- settings.configuration.omniauth_providers.each do |provider|
-		%a{ href: "/auth/#{provider.id}" }= provider.id
+		%a{ href: "/auth/#{provider.id}" }
+			%button.btn.btn-large.btn-success.navbar-btn{:type => "button"} Login
+					
 
 
 
