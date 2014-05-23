@@ -1,5 +1,8 @@
 html, body {
-        background-color: #eee;
+        /*background-color: #eee;*/
+        background-image: url('http://daewallpapers.com/wp-content/uploads/2014/04/Funny-American-Shorthair-Cat-background-Wallpaper.jpg');
+        background-size:100%;
+        background-repeat:no-repeat; 
       }
 
 .center {
@@ -61,4 +64,27 @@ div.scroll
 }
 .panel-default > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #ddd;
+}
+
+.logincontainer {
+  max-width: 400px;
+  height: 200px;
+  background-color: rgba(223,223,222,0.3);
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.loginbutton {
+  padding-right: 20px;
+}
+
+h2.login {
+  color:  #3E2C19;
+  font-weight:bolder;
+  font-size: 35px;
+  margin-top: 30px;
+}
+
+h3.login{
+  color:  #3E2C19
 }

@@ -1,9 +1,15 @@
-%h2 Hashtag Trader
-%ul
-	- settings.configuration.omniauth_providers.each do |provider|
-		%a{ href: "/auth/#{provider.id}" }
-			%button.btn.btn-large.btn-success.navbar-btn{:type => "button"} Login
-					
+%h2.login #HASHTAG TRADER
+.logincontainer
+	%h3.login Please login
+	%br 
+	%br
+	%br
+	%ul
+		- settings.configuration.omniauth_providers.each do |provider|
+			%a{ href: "/auth/#{provider.id}" }
+				.loginbutton
+					%button.btn.btn-warning.btn-large.btn-lg.btn-block{:type => "button"} Login Using Github
+						
 
 
 
