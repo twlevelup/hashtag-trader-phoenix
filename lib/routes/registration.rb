@@ -30,11 +30,6 @@ module HashTagTrader
           data_mgr.register(details)
           redirect to('/')
         end 
-
-        app.get '/auth/Terms' do
-    	   haml :tandc, :layout => :layout2
-        end
-
       end
     end
   end
