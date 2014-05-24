@@ -1,0 +1,11 @@
+%html
+	%head
+		= bootstrap_assets
+		%link{:type => "text/css", :rel => "stylesheet", :href => "/css/style.css"}
+		%title
+			HashtagTrader Login 
+	%body.login
+	.container
+		.row
+			.span4.center
+				= yield

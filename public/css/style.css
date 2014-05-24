@@ -1,9 +1,12 @@
 html, body {
-        /*background-color: #eee;*/
-        background-image: url('http://daewallpapers.com/wp-content/uploads/2014/04/Funny-American-Shorthair-Cat-background-Wallpaper.jpg');
-        background-size:100%;
-        background-repeat:no-repeat; 
+        background-color: #eee;       
       }
+
+body.login{
+  background-image: url('http://daewallpapers.com/wp-content/uploads/2014/04/Funny-American-Shorthair-Cat-background-Wallpaper.jpg');
+  background-size:100%;
+  background-repeat:no-repeat; 
+}
 
 .center {
 	float: none !important;

@@ -5,7 +5,7 @@ module HashTagTrader
       def self.registered(app)
         app.get '/auth/' do
           @configuration = Configuration.new
-          haml :auth, :layout => :layout2
+          haml :auth, :layout => :layout3
         end
 
         app.post '/auth/developer/callback' do
