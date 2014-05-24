@@ -1,1 +1,19 @@
-%h2 WELCOME!
+.span3
+	%ul.nav.nav-list
+		%li.nav-header HOME
+		%li.active
+			%a{:href => "/auth/Register"} My Inbox
+		%li
+			%a{:href => "#"} Report
+		%li
+			%a{:href => "#"} My portfolio
+		%li
+			%a{:href => "#"} Transaction history
+.span9
+	.row
+		.span4
+		.span
+			%form.form-search
+				%input.input-medium.search-query{:type => "text"}
+					%button.btn{:type => "submit"} Search
+

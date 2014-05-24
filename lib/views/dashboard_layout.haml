@@ -1,0 +1,14 @@
+!!!
+%html
+	%head
+		= bootstrap_assets
+		%link{:type => "text/css", :rel => "stylesheet", :href => "/css/style.css"}
+		%title
+			Hashtag Trader 
+	%body
+	.container
+		.row 
+			%h2 WELCOME TO DASHBOARD
+			=session[:name]
+			= yield
+
